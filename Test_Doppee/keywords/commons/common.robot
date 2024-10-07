@@ -10,7 +10,7 @@ Open website
     Open Browser    ${link_url}   ${ui_setting['browser']}    options=${chrome_options}
  
 Click user icon
-    SeleniumLibrary.Click Element       ${common_locator.user_icon}
+    Click when ready       ${common_locator.user_icon}
 
 Click when ready
     [Arguments]         ${element_path}
