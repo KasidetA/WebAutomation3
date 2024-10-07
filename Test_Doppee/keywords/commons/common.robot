@@ -14,15 +14,15 @@ Click user icon
 
 Click when ready
     [Arguments]         ${element_path}
-    SeleniumLibrary.Wait Until Element Is Visible       ${element_path}     ${waiting_time}
-    SeleniumLibrary.Click Element                       ${element_path}
+    SeleniumLibrary.wait until element is visible       ${element_path}     ${waiting_time}
+    SeleniumLibrary.click element                       ${element_path}
     
 Close popup
     common.Click when ready              ${popup_locator.ok_btn}
 
 Input text when ready
-    SeleniumLibrary.Wait Until Element Is Visible       ${element_path}     ${waiting_time}
-    SeleniumLibrary.Input Text                          ${element_path}     ${input_text}
+    SeleniumLibrary.wait until element is visible       ${element_path}     ${waiting_time}
+    SeleniumLibrary.input text                          ${element_path}     ${input_text}
 
 Generate random number
     ${random_number}    DateTime.Get current date    result_format=%H%M%S
