@@ -1,7 +1,6 @@
 *** Keywords ***
 Fill in delivery info and start payment process
     [Arguments]    ${name}    ${surname}    ${address}    ${phone}    ${email}
-    SeleniumLibrary.Wait until element is visible       ${cart_locator.input_txt_name}
     cart_page.Input email in delivery info                  ${email}
     cart_page.Input name in delivery info                   ${name}
     cart_page.Input surname in delivery info                ${surname}

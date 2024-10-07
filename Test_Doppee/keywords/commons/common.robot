@@ -10,7 +10,7 @@ Open website
     Open Browser    ${link_url}   ${ui_setting['browser']}    options=${chrome_options}
  
 Click user icon
-    Click when ready       ${common_locator.user_icon}
+    common.Click when ready       ${common_locator.user_icon}
 
 Click when ready
     [Arguments]         ${element_path}
@@ -18,12 +18,11 @@ Click when ready
     SeleniumLibrary.Click Element                       ${element_path}
     
 Close popup
-    Click when ready              ${popup_locator.ok_btn}
+    common.Click when ready              ${popup_locator.ok_btn}
 
 Input text when ready
     SeleniumLibrary.Wait Until Element Is Visible       ${element_path}     ${waiting_time}
     SeleniumLibrary.Input Text                          ${element_path}     ${input_text}
-
 
 Generate random number
     ${random_number}    DateTime.Get current date    result_format=%H%M%S
