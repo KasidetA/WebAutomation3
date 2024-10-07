@@ -1,15 +1,15 @@
 *** Keywords ***
 Input register email
     [Arguments]    ${email}    
-    SeleniumLibrary.Input Text      ${register_locator.username_container}     ${email}
+    Input text when ready      ${register_locator.username_container}     ${email}
 
 Input register password
     [Arguments]    ${password}    
-    SeleniumLibrary.Input Text      ${register_locator.password_container}    ${password}
+    Input text when ready      ${register_locator.password_container}    ${password}
 
 Input confirm password
     [Arguments]    ${cf_password}    
-    SeleniumLibrary.Input Text      ${register_locator.confirm_password_container}    ${cf_password}
+    Input text when ready      ${register_locator.confirm_password_container}    ${cf_password}
 
 Click submit button
-    SeleniumLibrary.Click Button    ${register_locator.submit_btn}
+    Click when ready    ${register_locator.submit_btn}

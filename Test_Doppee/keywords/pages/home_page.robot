@@ -1,5 +1,7 @@
 *** Keywords ***
-Type and search product
+Input product name
     [Arguments]    ${product}
-    SeleniumLibrary.Input Text          ${home_locator.input_txt}     ${product}
-    Wait and click element              ${home_locator.search_btn}
+    Input text when ready          ${home_locator.input_txt}     ${product}
+    
+Click search button
+    Click when ready            ${home_locator.search_btn}

@@ -4,4 +4,4 @@ Login
     log_in_page.Fill in an email    ${email}
     log_in_page.Fill in password    ${password}
     log_in_page.Click login
-    common.Click popup
+    common.Close popup

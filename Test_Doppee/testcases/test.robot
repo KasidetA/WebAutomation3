@@ -13,13 +13,14 @@ Test Register
     register_page.Input register password    ${user.password}
     register_page.Input confirm password    ${user.cf_password}
     register_page.Click Submit button
-    common.Click popup
+    common.Close popup
 
 Test Log in
     [Tags]      Login
     common.Click user icon
     log_in_feature.Login    ${email}    ${user.password}
-    home_page.Type and search product    ${user.product}
+    home_page.Input product name    ${user.product}
+    home_page.Click search button
     product_feature.add product to cart    ${product.product_name}
     cart_page.Open cart
     cart_feature.Fill in delivery info and start payment process    ${user.name}    ${user.surname}    

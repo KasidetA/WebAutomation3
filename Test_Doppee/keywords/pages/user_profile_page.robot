@@ -1,3 +1,3 @@
 *** Keywords ***
 Log out
-    Click Button    ${user_profile_locator.logout_btn} 
+    Click when ready    ${user_profile_locator.logout_btn} 

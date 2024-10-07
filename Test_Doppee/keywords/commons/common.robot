@@ -12,13 +12,18 @@ Open website
 Click user icon
     SeleniumLibrary.Click Element       ${common_locator.user_icon}
 
-Wait and click element
+Click when ready
     [Arguments]         ${element_path}
     SeleniumLibrary.Wait Until Element Is Visible       ${element_path}     ${waiting_time}
     SeleniumLibrary.Click Element                       ${element_path}
     
-Click popup
-    Wait and click element              ${popup_locator.ok_btn}
+Close popup
+    Click when ready              ${popup_locator.ok_btn}
+
+Input text when ready
+    SeleniumLibrary.Wait Until Element Is Visible       ${element_path}     ${waiting_time}
+    SeleniumLibrary.Input Text                          ${element_path}     ${input_text}
+
 
 Generate random number
     ${random_number}    DateTime.Get current date    result_format=%H%M%S
@@ -31,14 +36,14 @@ Generate new email
     ${domain_part}      BuiltIn.Set variable        ${parts[1]}
     ${random_number}    common.Generate random number
     ${modified_email}   BuiltIn.Set variable        ${mail_part}${random_number}@${domain_part}
-    Save Modified Email To YAML    ${modified_email}
+    Save modified email to YAML    ${modified_email}
 
-Save Modified Email To YAML
+Save modified email to YAML
     [Arguments]    ${modified_email}
     ${data}=    Create Dictionary    email=${modified_email}
-    Write YAML File    ${CURDIR}/../../resources/testdata/generated_email.yaml    ${data}
+    Write YAML file    ${CURDIR}/../../resources/testdata/generated_email.yaml    ${data}
 
-Write YAML File
+Write YAML file
     [Arguments]    ${file_name}    ${data}
     ${yaml_str}=    Evaluate    __import__('yaml').dump(${data})
     Create File    ${file_name}    ${yaml_str}
